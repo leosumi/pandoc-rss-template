@@ -46,9 +46,9 @@ The following variables are defined and available for use in the template:
 
 **Required channel elements**
 
-* `title`
-* `link`
-* `description`
+* `title` required
+* `link` required
+* `description` required
 
 **Optional channel elements**
 
@@ -58,16 +58,34 @@ The following variables are defined and available for use in the template:
 * `webMaster`
 * `pubDate`
 * `lastBuildDate`
-* `category`
+* `category`list
+  * `category`
+  * `domain` (RSS attribute)
+* `categories` (non RSS element)
 * `generator`
 * `docs`
 * `cloud`
+  * `domain` required (RSS attribute)
+  * `path` required (RSS attribute)
+  * `port` required (RSS attribute)
+  * `protocol` required (RSS attribute)
+  * `registerProcedure` required (RSS attribute)
 * `ttl`
 * `image`
+  * `url` required
+  * `title` required
+  * `link` required
+  * `width`
+  * `height`
+  * `description`
 * `rating`
 * `textInput`
-* `skipHours`
-* `skipDays`
+  * `title` required
+  * `description` required
+  * `name` required
+  * `link` required
+* `skipHours` list
+* `skipDays` list
 
 **Elements of item**
 
@@ -82,6 +100,44 @@ The following variables are defined and available for use in the template:
   * `guid`
   * `pubDate`
   * `source`
+
+### Category element
+
+The *category* element can be present multiple times. It can also take *domain* as an optional attribute. Because of the optional attribute, the category key must be written multiple times. To avoid repetitions, I created the `categories` variable that can take a list of categories, but without *domain* specified.
+
+```yaml
+---
+category:
+  - category: Category A
+  - category: Category B
+    domain: Domain of category B
+  - category: Category C
+
+categories:
+  - Category X
+  - Category Y
+  - Category Z
+...
+```
+
+### SkipHours and skipDays elements
+
+The *skipHours* and *skipDays* elements have an hour and day sub-elements respectively in the specification. As there is no other sub-elements, *hour* and *day* do not need to be specified. The `skipHours` and `skipDays` variable are simple lists of values taken by *hour* and *day* elements respectively.
+
+
+```yaml
+---
+skipHours:
+  - 1
+  - 3
+  - 23
+
+skipDays:
+  - Monday
+  - Wednesday
+  - Sunday
+...
+```
 
 ## Profile
 
