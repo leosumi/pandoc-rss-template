@@ -1,6 +1,6 @@
 # pandoc-rss-template
 
-A pandoc template to convert YAML files to RSS feeds. The template follows the RSS version 2.0.11 of the RSS 2.0 specification, published by the RSS Advisory Board on March 30, 2009. The current spec can be found [here](http://http://www.rssboard.org/rss-specification).
+A pandoc template to convert YAML files to RSS feeds. The template follows the RSS version 2.0.11 of the RSS 2.0 specification, published by the RSS Advisory Board on March 30, 2009. The current spec can be found [here](http://www.rssboard.org/rss-specification).
 
 ## Installation
 
