@@ -1,6 +1,6 @@
 # pandoc-rss-template
 
-A pandoc template to convert YAML files to RSS feeds.
+A pandoc template to convert YAML files to RSS feeds. The template follows the RSS version 2.0.11 of the RSS 2.0 specification, published by the RSS Advisory Board on March 30, 2009. The current spec can be found [here](http://http://www.rssboard.org/rss-specification).
 
 ## Installation
 
@@ -37,6 +37,65 @@ item:
     link: awesome.com/second-entry.html
 ...
 ```
+
+## Template variables
+
+All the RSS elements described in the current RSS specification are present as template variables. Look at the specification for a correct use of the elements. Examples are also provided.
+
+The following variables are defined and available for use in the template:
+
+**Required channel elements**
+
+* `title`
+* `link`
+* `description`
+
+**Optional channel elements**
+
+* `language`
+* `copyright`
+* `managingEditor`
+* `webMaster`
+* `pubDate`
+* `lastBuildDate`
+* `category`
+* `generator`
+* `docs`
+* `cloud`
+* `ttl`
+* `image`
+* `rating`
+* `textInput`
+* `skipHours`
+* `skipDays`
+
+**Elements of item**
+
+* `item`
+  * `title`
+  * `link`
+  * `description`
+  * `author`
+  * `category`
+  * `comments`
+  * `enclosure`
+  * `guid`
+  * `pubDate`
+  * `source`
+
+## Profile
+
+For RSS guidelines, you can look at the RSS [Best Practices Profile](http://www.rssboard.org/rss-profile).
+
+## Enforcement
+
+The template do not enforce a valid use of the specification. Be aware of the following points:
+
+* The string passed as value to a template variable is not checked for format with the specification
+
+## Validation
+
+To validate the generated RSS feed file, you can check it with an [RSS validator](http://www.rssboard.org/rss-validator/).
 
 ## License
 
