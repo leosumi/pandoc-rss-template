@@ -44,6 +44,8 @@ item:
 ...
 ```
 
+You can look at the [examples folder](examples/) for more complete examples.
+
 ## Template variables
 
 All the RSS elements described in the current RSS specification are present as template variables. Look at the specification for a correct use of the elements. Examples are also provided.
