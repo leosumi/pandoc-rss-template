@@ -58,10 +58,10 @@ The following variables are defined and available for use in the template:
 * `webMaster`
 * `pubDate`
 * `lastBuildDate`
-* `category`list
+* `category` list
   * `category`
   * `domain` (RSS attribute)
-* `categories` (non RSS element)
+* `categories` list (non RSS element)
 * `generator`
 * `docs`
 * `cloud`
@@ -94,12 +94,22 @@ The following variables are defined and available for use in the template:
   * `link`
   * `description`
   * `author`
-  * `category`
+  * `category` list
+    * `category`
+    * `domain` (RSS attribute)
+  * `categories` list (non RSS element)
   * `comments`
   * `enclosure`
+    * `url` required (RSS attribute)
+    * `length` required (RSS attribute)
+    * `type` required (RSS attribute)
   * `guid`
+    * `guid`
+    * `isPermaLink` (RSS attribute)
   * `pubDate`
   * `source`
+    * `source`
+    * `url` required (RSS attribute)
 
 ### Category element
 
@@ -136,6 +146,32 @@ skipDays:
   - Monday
   - Wednesday
   - Sunday
+...
+```
+
+### Guid and source elements
+
+The *guid* element can take an optional RSS attribute *isPermaLink*. Because of this attribute, the `guid` variable has to be written twice even if `isPermaLink` is not used. Be aware that the default value for the *isPermaLink* attribute is set to *true* in the specification.
+
+The `source` variable usage is similar to the `guid` variable. The only difference is that the `url` variable can not be omitted.
+
+```yaml
+---
+item:
+  - title: Title A
+    guid:
+      guid: 3241141431432143
+      isPermaLink: false
+  - title: Title B
+    guid:
+      guid: http://awesome.com/title-b
+      isPermaLink: true
+  - title: Title C
+    guid:
+      guid: http://awesome.com/title-c
+    source:
+      source: Title C
+      url: http://awesome.com/feed.xml
 ...
 ```
 

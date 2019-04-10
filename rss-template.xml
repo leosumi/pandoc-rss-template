@@ -69,12 +69,20 @@ $if(item.link)$<link>$item.link$</link>$endif$
 $if(item.description)$<description>$item.description$</description>$endif$
 
 $if(item.author)$<author>$item.author$</author>$endif$
-$if(item.category)$<category>$item.category$</category>$endif$
+
+$for(item.category)$
+<category$if(item.category.domain)$ domain="$item.category.domain$"$endif$>$item.category.category$</category>
+$endfor$
+
+$for(item.categories)$
+<category>$item.categories$</category>
+$endfor$
+
 $if(item.comments)$<comments>$item.comments$</comments>$endif$
-$if(item.enclosure)$<enclosure>$item.enclosure$</enclosure>$endif$
-$if(item.guid)$<guid>$item.guid$</guid>$endif$
+$if(item.enclosure)$<enclosure url="$item.enclosure.url$" length="$item.enclosure.length$" type="$item.enclosure.type$" />$endif$
+$if(item.guid)$<guid$if(item.guid.isPermaLink)$ isPermaLink="$item.guid.isPermaLink$"$endif$>$item.guid.guid$</guid>$endif$
 $if(item.pubDate)$<pubDate>$item.pubDate$</pubDate>$endif$
-$if(item.source)$<source>$item.source$</source>$endif$
+$if(item.source)$<source url="$item.source.url$">$item.source.source$</source>$endif$
 </item>
 $endfor$
 </channel>
