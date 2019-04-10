@@ -1,6 +1,12 @@
 # pandoc-rss-template
 
-A pandoc template to convert YAML files to RSS feeds. The template follows the RSS version 2.0.11 of the RSS 2.0 specification, published by the RSS Advisory Board on March 30, 2009. The current spec can be found [here](http://www.rssboard.org/rss-specification).
+A pandoc template to convert YAML files to RSS feeds.
+
+RSS feeds use the XML format. XML files are not the most beautiful and readable because of all the tags present in them. The present template enhance the readability of the RSS feed by using the YAML format and then converting it to the XML file. The template can be use to generate feeds for static websites for instance.
+
+The template is used with pandoc to convert the YAML file to XML file. It is a nice improvement if you want to use pandoc as a static site generator.
+
+The template follows the RSS version 2.0.11 of the RSS 2.0 specification, published by the RSS Advisory Board on March 30, 2009. The current spec can be found [here](http://www.rssboard.org/rss-specification).
 
 ## Installation
 
@@ -26,15 +32,15 @@ Here is an example of YAML file that can be converted to an RSS feed:
 ```yaml
 ---
 title: RSS feed for my awesome blog
-description: RSS feed created with pandoc with a template
 link: awesome.com
+description: RSS feed created with pandoc with a template
 item:
   - title: An entry title
-    description: The first entry
     link: awesome.com/first-entry.html
+    description: The first entry
   - title: A second entry title
-    description: The second entry
     link: awesome.com/second-entry.html
+    description: The second entry
 ...
 ```
 
