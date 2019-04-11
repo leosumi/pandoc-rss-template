@@ -195,7 +195,7 @@ The template do not enforce a valid use of the specification. Be aware of the fo
 
 ## Validation
 
-To validate the generated RSS feed file, you can check it with an [RSS validator](http://www.rssboard.org/rss-validator/).
+To validate the generated RSS feed file, you can check it with an [RSS validator](http://www.rssboard.org/rss-validator/). There is also the [W3C validator](https://validator.w3.org/feed/).
 
 ## License
 
